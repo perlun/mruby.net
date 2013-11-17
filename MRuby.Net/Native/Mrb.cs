@@ -12,5 +12,9 @@ namespace MRuby.Net.Native
         // void mrb_close(mrb_state*);
         [DllImport("mruby", EntryPoint = "mrb_close", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Close(IntPtr env);
+
+        // mrb_value mrb_load_string(mrb_state *mrb, const char *s);
+        [DllImport("mruby", EntryPoint = "mrb_load_string", CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr LoadString(IntPtr env, [MarshalAs(UnmanagedType.LPWStr)]string s);
     }
 }
