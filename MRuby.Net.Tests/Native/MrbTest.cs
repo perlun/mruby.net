@@ -18,10 +18,10 @@ namespace MRuby.Net.Tests.Native
         public void Can_run_some_dummy_code()
         {
             var env = Mrb.Open();
-            
-            // TODO: This raises exceptions. Why? We are marshalling as the "right" string type, so it should really work, but
-            // TODO: for whatever reason, it doesn't...
-            Mrb.LoadString(env, "10 + 20");
+
+            var value = Mrb.LoadString(env, "10 + 20");
+            Assert.Equal(MrbValueType.Fixnum, value.ValueType);
+            Assert.Equal(30U, value.ValuePart1);
 
             Mrb.Close(env);
         }
