@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4F883E35-8661-4EF7-B97E-11C8B9BAFC49}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{6C3B175E-BB85-437C-8EE3-848150D4EA8F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MRuby.Net</RootNamespace>
-    <AssemblyName>MRuby.Net</AssemblyName>
+    <RootNamespace>MRuby.Net.Irb</RootNamespace>
+    <AssemblyName>MRuby.Net.Irb</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,12 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Native\Mrb.cs" />
-    <Compile Include="Native\MrbValue.cs" />
-    <Compile Include="Native\MrbValueType.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MRuby.Net\MRuby.Net.csproj">
+      <Project>{4f883e35-8661-4ef7-b97e-11c8b9bafc49}</Project>
+      <Name>MRuby.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(SolutionDir)mruby.dll $(TargetDir)
+copy $(SolutionDir)mruby.pdb $(TargetDir)
+</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

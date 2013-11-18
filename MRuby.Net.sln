@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Tests", "MRuby.Ne
 		{4F883E35-8661-4EF7-B97E-11C8B9BAFC49} = {4F883E35-8661-4EF7-B97E-11C8B9BAFC49}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Irb", "MRuby.Net.Irb\MRuby.Net.Irb.csproj", "{6C3B175E-BB85-437C-8EE3-848150D4EA8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -24,6 +26,10 @@ Global
 		{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}.Debug|x86.Build.0 = Debug|x86
 		{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}.Release|x86.ActiveCfg = Release|x86
 		{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}.Release|x86.Build.0 = Release|x86
+		{6C3B175E-BB85-437C-8EE3-848150D4EA8F}.Debug|x86.ActiveCfg = Debug|x86
+		{6C3B175E-BB85-437C-8EE3-848150D4EA8F}.Debug|x86.Build.0 = Debug|x86
+		{6C3B175E-BB85-437C-8EE3-848150D4EA8F}.Release|x86.ActiveCfg = Release|x86
+		{6C3B175E-BB85-437C-8EE3-848150D4EA8F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
