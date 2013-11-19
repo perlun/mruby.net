@@ -47,5 +47,20 @@ namespace MRuby.Net.Tests.Native
 
             Mrb.Close(env);
         }
+
+        [Fact]
+        public void Raises_an_exception_for_invalid_code()
+        {
+            var env = Mrb.Open();
+
+            var value = Mrb.LoadString(env, "this is just some junk (not valid Ruby code)");
+            Assert.True(value.IsNil);
+
+            // TODO: This is hard to check in "pure CLR" (using P/Invoke); we don't want to have to duplicate a lot of the mruby
+            // TODO: internals on the CLR side. Perhaps we have to consider the C++/CLR track after all...
+            // if (mrb->exc) {
+
+            Mrb.Close(env);
+        }
     }
 }
