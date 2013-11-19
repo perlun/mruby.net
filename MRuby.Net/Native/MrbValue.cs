@@ -21,13 +21,8 @@ namespace MRuby.Net.Native
         {
             get
             {
-                if (ValueType != MrbValueType.False) return false;
-
-                Debug.Assert(ValuePart1 == 0);
-                Debug.Assert(ValuePart2 == 0);
-                Debug.Assert(ValuePart3 == 0);
-
-                return true;
+                return ValueType == MrbValueType.False &&
+                       ValuePart1 == 0;
             }
         }
 
@@ -35,13 +30,8 @@ namespace MRuby.Net.Native
         {
             get
             {
-                if (ValueType != MrbValueType.False) return false;
-
-                Debug.Assert(ValuePart1 == 1);
-                Debug.Assert(ValuePart2 == 0);
-                Debug.Assert(ValuePart3 == 0);
-
-                return true;
+                return ValueType != MrbValueType.False &&
+                       ValuePart1 == 1;
             }
         }
     }
