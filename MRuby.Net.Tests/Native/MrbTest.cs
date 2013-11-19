@@ -15,13 +15,35 @@ namespace MRuby.Net.Tests.Native
         }
 
         [Fact]
-        public void Can_run_some_dummy_code()
+        public void Can_run_some_code_and_get_a_Fixnum_back()
         {
             var env = Mrb.Open();
 
             var value = Mrb.LoadString(env, "10 + 20");
             Assert.Equal(MrbValueType.Fixnum, value.ValueType);
             Assert.Equal(30U, value.ValuePart1);
+
+            Mrb.Close(env);
+        }
+
+        [Fact]
+        public void Can_run_some_code_and_get_nil_back()
+        {
+            var env = Mrb.Open();
+
+            var value = Mrb.LoadString(env, "nil");
+            Assert.True(value.IsNil);
+
+            Mrb.Close(env);
+        }
+
+        [Fact]
+        public void Can_run_some_code_and_get_false_back()
+        {
+            var env = Mrb.Open();
+
+            var value = Mrb.LoadString(env, "false");
+            Assert.True(value.IsFalse);
 
             Mrb.Close(env);
         }
