@@ -1,8 +1,11 @@
 ﻿namespace MRuby.Net.Native
 {
+    // Based on mrb_vtype (the non-boxing version).
     public enum MrbValueType
     {
+        // Seems to be used for 'nil' values also. https://github.com/mruby/mruby/issues/1588
         False = 0,
+
         Free,        /*   1 */
         True,        /*   2 */
         Fixnum,      /*   3 */
