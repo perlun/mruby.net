@@ -30,7 +30,7 @@ namespace MRuby.Net.Native
         {
             get
             {
-                return ValueType != MrbValueType.False &&
+                return ValueType == MrbValueType.False &&
                        ValuePart1 == 1;
             }
         }
