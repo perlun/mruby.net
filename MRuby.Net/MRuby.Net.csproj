@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Native\Mrb.cs" />
+    <Compile Include="Native\MrbMethods.cs" />
     <Compile Include="Native\MrbValue.cs" />
     <Compile Include="Native\MrbValueType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

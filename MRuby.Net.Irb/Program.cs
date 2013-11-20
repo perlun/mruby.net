@@ -5,11 +5,11 @@ namespace MRuby.Net.Irb
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var env = Mrb.Open();
-            var result = Mrb.LoadString(env, "p 'Hello World from Ruby'; nil;");
-            Mrb.Close(env);
+            var env = MrbMethods.mrb_open();
+            MrbMethods.mrb_load_string(env, "p 'Hello World from Ruby'; nil;");
+            MrbMethods.mrb_close(env);
 
             Console.ReadKey();
         }
