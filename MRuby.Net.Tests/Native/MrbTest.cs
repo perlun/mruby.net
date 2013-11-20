@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using MRuby.Net.Native;
+﻿using MRuby.Net.Native;
 using Xunit;
 
 namespace MRuby.Net.Tests.Native
@@ -8,14 +6,14 @@ namespace MRuby.Net.Tests.Native
     public class MrbTest
     {
         [Fact]
-        public void Can_Close_an_environment_previously_openeded_with_Open()
+        public void mrb_close_CanCloseAnEnvironment()
         {
             var env = MrbMethods.mrb_open();
             MrbMethods.mrb_close(env);
         }
 
         [Fact]
-        public void Can_run_some_code_and_get_a_Fixnum_back()
+        public void mrb_load_string_CanRunSomeCodeAndGetAFixnumBack()
         {
             var env = MrbMethods.mrb_open();
 
@@ -27,7 +25,7 @@ namespace MRuby.Net.Tests.Native
         }
 
         [Fact]
-        public void Can_run_some_code_and_get_nil_back()
+        public void mrb_load_stirng_CanRunSomeCodeAndGetNilBack()
         {
             var env = MrbMethods.mrb_open();
 
@@ -38,7 +36,7 @@ namespace MRuby.Net.Tests.Native
         }
 
         [Fact]
-        public void Can_run_some_code_and_get_false_back()
+        public void mrb_load_string_CanRunSomeCodeAndGetFalseBack()
         {
             var env = MrbMethods.mrb_open();
 
@@ -49,7 +47,7 @@ namespace MRuby.Net.Tests.Native
         }
 
         [Fact]
-        public void Raises_an_exception_for_invalid_code()
+        public void mrb_load_string_RaisesAnExceptionForInvalidCode()
         {
             var env = MrbMethods.mrb_open();
 
