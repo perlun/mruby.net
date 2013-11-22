@@ -45,8 +45,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MRuby.Net\MRuby.Net.csproj">
-      <Project>{4f883e35-8661-4ef7-b97e-11c8b9bafc49}</Project>
+    <ProjectReference Include="..\MRuby.Net\MRuby.Net.vcxproj">
+      <Project>{9f231241-80d9-4be2-a0ea-1fd525268a58}</Project>
       <Name>MRuby.Net</Name>
     </ProjectReference>
   </ItemGroup>

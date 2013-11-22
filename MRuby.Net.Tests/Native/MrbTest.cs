@@ -3,25 +3,25 @@ using Xunit;
 
 namespace MRuby.Net.Tests.Native
 {
-    public class MrbTest
+    public unsafe class MrbTest
     {
         [Fact]
         public void mrb_close_CanCloseAnEnvironment()
         {
-            var env = MrbMethods.mrb_open();
-            MrbMethods.mrb_close(env);
+            var mrb = MrbMethods.mrb_open();
+            MrbMethods.mrb_close(mrb);
         }
 
         [Fact]
         public void mrb_load_string_CanRunSomeCodeAndGetAFixnumBack()
         {
-            var env = MrbMethods.mrb_open();
+            var mrb = MrbMethods.mrb_open();
 
-            var value = MrbMethods.mrb_load_string(env, "10 + 20");
+            var value = MrbMethods.mrb_load_string(mrb, "10 + 20");
             Assert.Equal(MrbValueType.Fixnum, value.ValueType);
-            Assert.Equal(30U, value.ValuePart1);
+            Assert.Equal(30U, value.IntegerValue);
 
-            MrbMethods.mrb_close(env);
+            MrbMethods.mrb_close(mrb);
         }
 
         [Fact]
