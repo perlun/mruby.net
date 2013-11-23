@@ -27,23 +27,23 @@ namespace MRuby.Net.Tests.Native
         [Fact]
         public void mrb_load_stirng_CanRunSomeCodeAndGetNilBack()
         {
-            var env = MrbMethods.mrb_open();
+            var mrb = MrbMethods.mrb_open();
 
-            var value = MrbMethods.mrb_load_string(env, "nil");
+            var value = MrbMethods.mrb_load_string(mrb, "nil");
             Assert.True(value.IsNil);
 
-            MrbMethods.mrb_close(env);
+            MrbMethods.mrb_close(mrb);
         }
 
         [Fact]
         public void mrb_load_string_CanRunSomeCodeAndGetFalseBack()
         {
-            var env = MrbMethods.mrb_open();
+            var mrb = MrbMethods.mrb_open();
 
-            var value = MrbMethods.mrb_load_string(env, "false");
+            var value = MrbMethods.mrb_load_string(mrb, "false");
             Assert.True(value.IsFalse);
 
-            MrbMethods.mrb_close(env);
+            MrbMethods.mrb_close(mrb);
         }
 
         [Fact]
