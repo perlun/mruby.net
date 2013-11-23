@@ -9,6 +9,8 @@ namespace MRuby.Net.Irb
         {
             var mrb = MrbMethods.mrb_open();
 
+            Console.WriteLine("Welcome to MRuby.Net Interactive Ruby (irb). Enter 'exit' on a line by itself to exit.");
+
             while (true)
             {
                 var line = Console.ReadLine();
