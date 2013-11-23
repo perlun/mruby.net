@@ -36,7 +36,8 @@ namespace MRuby {
                     
                     if (mrb_state->exc != nullptr) {
                         auto mrb_exception = mrb_obj_value(mrb_state->exc);
-                        
+                        mrb_state->exc = nullptr;
+
                         // The mrb_exception is the actual MRuby "exception" object, so we call its "to_s" method to get the
                         // exception message.
                         auto exception_message = mrb_funcall(mrb_state, mrb_exception, "to_s", 0);
