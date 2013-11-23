@@ -1,8 +1,8 @@
 #pragma once
 
+#include <vcclr.h>
 #include <mruby/compile.h>
 #include <mruby/string.h>
-#include <vcclr.h>
 
 #include "MRuby.Net.Native.MrbState.h"
 #include "MRuby.Net.Native.MrbValue.h"
@@ -44,7 +44,7 @@ namespace MRuby {
                         throw gcnew Exception(Marshal::PtrToStringAnsi((IntPtr)c_string));
                     }
 
-                    return gcnew MrbValue(result);
+                    return gcnew MrbValue(mrb_state, result);
                 }
             };
         }

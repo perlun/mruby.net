@@ -1,4 +1,9 @@
+#pragma once
+
 #include <mruby.h>
+
+using namespace System;
+using namespace System::Runtime::InteropServices;
 
 namespace MRuby {
     namespace Net {
@@ -56,10 +61,19 @@ namespace MRuby {
                     }
                 }
 
+                String^ ToString() override
+                {
+                    auto mrb_string = mrb_funcall(NativeMrbState, *NativeMrbValue, "to_s", 0);
+                    auto c_string = mrb_string_value_cstr(NativeMrbState, &mrb_string);
+                    return Marshal::PtrToStringAnsi((IntPtr)c_string);
+                }
+
             internal:
+                property mrb_state* NativeMrbState;
                 property mrb_value* NativeMrbValue;
                
-                MrbValue(mrb_value value) {
+                MrbValue(mrb_state* mrb, mrb_value value) {
+                    NativeMrbState = mrb;
                     NativeMrbValue = new mrb_value(value);
                 }
 
