@@ -7,11 +7,25 @@ namespace MRuby.Net.Irb
     {
         static void Main()
         {
-            var env = MrbMethods.mrb_open();
-            MrbMethods.mrb_load_string(env, "p 'Hello World from Ruby'; nil;");
-            MrbMethods.mrb_close(env);
+            var mrb = MrbMethods.mrb_open();
 
-            Console.ReadKey();
+            while (true)
+            {
+                var line = Console.ReadLine();
+                if (line == "exit") break;
+
+                try
+                {
+                    var result = MrbMethods.mrb_load_string(mrb, line);
+                    Console.WriteLine(result.ToString());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Exception caught: " + ex.Message);
+                }
+            }
+
+            MrbMethods.mrb_close(mrb);
         }
     }
 }
