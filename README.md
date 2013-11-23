@@ -1,7 +1,7 @@
 # mruby.net
 
 Highly experimental .NET wrappers for [mruby](http://github.com/mruby/mruby). This is just an experiment to see how
-feasible such a wrapper is. Don't expect it to work, and please DO NOT use it for any production code. You have been
+feasible such a wrapper is. Don't expect it to work, and please **DO NOT** use it for any production code. You have been
 warned. If it totally blows up your computer, "I told you so" is my response. ;)
 
 ## License
