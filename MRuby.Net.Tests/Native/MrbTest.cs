@@ -1,4 +1,5 @@
-﻿using MRuby.Net.Native;
+﻿using System;
+using MRuby.Net.Native;
 using Xunit;
 
 namespace MRuby.Net.Tests.Native
@@ -49,16 +50,11 @@ namespace MRuby.Net.Tests.Native
         [Fact]
         public void mrb_load_string_RaisesAnExceptionForInvalidCode()
         {
-            var env = MrbMethods.mrb_open();
+            var mrb = MrbMethods.mrb_open();
 
-            var value = MrbMethods.mrb_load_string(env, "this is just some junk (not valid Ruby code)");
-            Assert.True(value.IsNil);
+            Assert.Throws<Exception>(() => MrbMethods.mrb_load_string(mrb, "this is just some junk (not valid Ruby code)"));
 
-            // TODO: This is hard to check in "pure CLR" (using P/Invoke); we don't want to have to duplicate a lot of the mruby
-            // TODO: internals on the CLR side. Perhaps we have to consider the C++/CLR track after all...
-            // if (mrb->exc) {
-
-            MrbMethods.mrb_close(env);
+            MrbMethods.mrb_close(mrb);
         }
     }
 }
