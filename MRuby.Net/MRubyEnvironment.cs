@@ -3,11 +3,11 @@ using System;
 
 namespace MRuby.Net
 {
-    public class MrubyEnvironment : IDisposable
+    public class MRubyEnvironment : IDisposable
     {
         private readonly MrbState mrbState;
 
-        public MrubyEnvironment()
+        public MRubyEnvironment()
         {
             mrbState = MrbMethods.mrb_open();
         }

@@ -7,7 +7,7 @@ namespace Irb
     {
         private static void Main()
         {
-            using (var mruby = new MrubyEnvironment())
+            using (var mruby = new MRubyEnvironment())
             {
                 Console.WriteLine("Welcome to MRuby.Net Interactive Ruby (irb). Enter 'exit' on a line by itself to exit.");
 
