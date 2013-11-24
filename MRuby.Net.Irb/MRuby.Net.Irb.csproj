@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MRuby.Net\MRuby.Net.vcxproj">
+    <ProjectReference Include="..\MRuby.Net.Native\MRuby.Net.Native.vcxproj">
       <Project>{9f231241-80d9-4be2-a0ea-1fd525268a58}</Project>
-      <Name>MRuby.Net</Name>
+      <Name>MRuby.Net.Native</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

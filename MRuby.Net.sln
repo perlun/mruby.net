@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Tests", "MRuby.Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Irb", "MRuby.Net.Irb\MRuby.Net.Irb.csproj", "{6C3B175E-BB85-437C-8EE3-848150D4EA8F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MRuby.Net", "MRuby.Net\MRuby.Net.vcxproj", "{9F231241-80D9-4BE2-A0EA-1FD525268A58}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MRuby.Net.Native", "MRuby.Net.Native\MRuby.Net.Native.vcxproj", "{9F231241-80D9-4BE2-A0EA-1FD525268A58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
