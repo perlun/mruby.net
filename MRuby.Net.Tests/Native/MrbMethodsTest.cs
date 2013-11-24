@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MRuby.Net.Tests.Native
 {
-    public unsafe class MrbTest
+    public class MrbMethodsTest
     {
         [Fact]
         public void mrb_close_CanCloseAnEnvironment()
