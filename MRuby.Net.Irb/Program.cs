@@ -1,33 +1,32 @@
-﻿using MRuby.Net.Native;
-using System;
+﻿using System;
+using MRuby.Net;
 
-namespace MRuby.Net.Irb
+namespace Irb
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        private static void Main()
         {
-            var mrb = MrbMethods.mrb_open();
-
-            Console.WriteLine("Welcome to MRuby.Net Interactive Ruby (irb). Enter 'exit' on a line by itself to exit.");
-
-            while (true)
+            using (var mruby = new MrubyEnvironment())
             {
-                var line = Console.ReadLine();
-                if (line == "exit") break;
+                Console.WriteLine("Welcome to MRuby.Net Interactive Ruby (irb). Enter 'exit' on a line by itself to exit.");
 
-                try
+                while (true)
                 {
-                    var result = MrbMethods.mrb_load_string(mrb, line);
-                    Console.WriteLine(result.ToString());
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Exception caught: " + ex.Message);
+                    var line = Console.ReadLine();
+                    if (line == "exit") break;
+
+                    try
+                    {
+                        var result = mruby.Evaluate(line);
+                        Console.WriteLine(result.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Exception caught: " + ex.Message);
+                    }
                 }
             }
-
-            MrbMethods.mrb_close(mrb);
         }
     }
 }
