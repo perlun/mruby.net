@@ -2,7 +2,7 @@
 using MRuby.Net.Native;
 using Xunit;
 
-namespace MRuby.Net.Tests.Native
+namespace MRuby.Net.Tests
 {
     public class MrbMethodsTest
     {

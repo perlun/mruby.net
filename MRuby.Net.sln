@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Tests", "MRuby.Net.Tests\MRuby.Net.Tests.csproj", "{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Native.Tests", "MRuby.Net.Native.Tests\MRuby.Net.Native.Tests.csproj", "{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MRuby.Net.Irb", "MRuby.Net.Irb\MRuby.Net.Irb.csproj", "{6C3B175E-BB85-437C-8EE3-848150D4EA8F}"
 EndProject
