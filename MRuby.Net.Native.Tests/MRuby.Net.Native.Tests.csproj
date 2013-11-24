@@ -7,8 +7,8 @@
     <ProjectGuid>{E65F1B5A-7336-41F5-BE0E-E5D33B07ECF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MRuby.Net.Tests</RootNamespace>
-    <AssemblyName>MRuby.Net.Tests</AssemblyName>
+    <RootNamespace>MRuby.Net.Native.Tests</RootNamespace>
+    <AssemblyName>MRuby.Net.Native.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
